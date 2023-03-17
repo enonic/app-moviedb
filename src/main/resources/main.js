@@ -11,7 +11,7 @@ const projectData = {
     description: 'Sample content from the cinematic industry',
     language: 'en',
     siteConfig: [{
-        applicationKey: 'com.enonic.app.moviedb',
+        applicationKey: app.name,
         config: {
             a: 'b'
         }
