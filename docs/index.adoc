@@ -150,7 +150,7 @@ This is what the definition looks like:
 ./src/main/resources/site/x-data/some/some.xml
 [source,XML]
 ----
-include::{sourcedir}/src/main/resources/site/x-data/some/some.xml[]
+include::{sourcedir}/src/main/resources/site/x-data/SoMe/SoMe.xml[]
 ----
 
 == Adding a new content type
