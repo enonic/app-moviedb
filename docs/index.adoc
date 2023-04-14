@@ -6,7 +6,7 @@
 
 Hands on introduction to our platform, the CLI, Content Studio, the headless API and our free hosting tier.
 
-TIP: *Just looking for a demo?* - https://enonic.com/sign-up[Sign up for a free Enonic account]. Create a new solution based on the `Movie DB` template to get a live demo using the same setup as this tutorial.  
+TIP: *Just looking for a demo?* - https://enonic.com/sign-up[Sign up for a free Enonic account^]. Create a new solution based on the `Movie DB` template to get a live demo using the same setup as this tutorial.  
 
 == Introduction
 
@@ -21,7 +21,7 @@ This guide will show you how to:
 
 == Create a Sandbox
 
-NOTE: Make sure you have installed https://developer.enonic.com/start[Enonic CLI] before you continue.
+NOTE: Make sure you have installed https://developer.enonic.com/start[Enonic CLI^] before you continue.
 
 A sandbox is a local developer instance of our platform - Enonic XP. Create a sandbox by running this command in your terminal:
 
@@ -41,13 +41,15 @@ TIP: Dev mode automatically loads changes in your code when developing.
 
 Enonic apps are used to ship everything from content models, to code and platform extensions.
 
-From a **new terminal window**, create your first Enonic app. Use the default options when prompted.
+From a **new terminal window**, create your first Enonic app.
+
+IMPORTANT: Use the default options when prompted.
 
   enonic project create -r app-moviedb
 
 [TIP]
 ====
-The command uses the https://market.enonic.com/vendors/enonic/movie-db[Movie DB] app as a starter (template) for your app.
+The command uses the https://market.enonic.com/vendors/enonic/movie-db[Movie DB^] app as a starter (template) for your app.
 ====
 
 === Project structure
@@ -69,7 +71,7 @@ samples/ <5>
 gradle.properties <6>
 ----
 
-<1> The documentation your are reading now
+<1> The documentation you are reading now
 <2> Movie DB content
 <3> Content Types schemas are placed in this directory
 <4> X-data schemas are placed here
@@ -78,7 +80,7 @@ gradle.properties <6>
 
 == Deploy your app
 
-Assuming you did not change the directory name, build and deploy your app with the following commands : 
+Assuming you did not change the default directory name `myproject/` when creating the app, build and deploy your app with the following commands : 
 
   cd myproject
   enonic project deploy
@@ -95,19 +97,23 @@ Look for a line like this in the sandbox log to verify that the app has started:
 
 == Install Content Studio
 
-https://market.enonic.com/vendors/enonic/content-studio^[Content Studio] is the editorial interface used to create and manage content. It is not a part of the core platform, but as you will see soon, it can easily be installed from https://market.enonic.com^[Enonic Market].
+https://market.enonic.com/vendors/enonic/content-studio[Content Studio^] is the editorial interface used to create and manage content. It is not a part of the core platform, but as you will see soon, it can easily be installed from https://market.enonic.com[Enonic Market^].
 
-. **Open the sandbox admin**: http://localhost:8080/admin^[http://localhost:8080/admin] and click `Login without a user`. This will bring you to the Dashboard.
+. **Open the sandbox admin**: http://localhost:8080/admin[http://localhost:8080/admin^] and click `Login without a user`. This will bring you to the Dashboard.
 +
-. **Install Content Studio** from the top right `XP menu -> Applications -> Install` and find it in the list of apps that appears.
+. **Open the Applications app** from the top right `XP menu -> Applications`.
++
+image::xp-menu-applications.png["Go to Applications from the XP menu", width="319px"]
++
+. **Install Content Studio** by clicking `Install`. Find `Content Studio` in the list of apps that appears, select it and clicking install once more. 
+
+image::install-content-studio.png["Install the Content Studio app", width="760px"]
 
 == Browse content
 
 When your application was installed, it automatically created a CMS project called `Movie DB`, and imported some demo content. Let's have a look:
 
-. Open Content Studio from the top right `XP menu -> Content Studio`.
-
-image::xp-menu.png["Launch Content Studio from the XP menu", width="440px"]
+. Open Content Studio, which is now available in `XP menu -> Content Studio`.
 
 Select the `Movie DB` project when prompted, and you should now see the imported content.
 
@@ -116,11 +122,11 @@ image::content-studio-in-action.gif["Content Studio with Movie DB content", widt
 
 == Content type: Person
 
-When editing a Person item, this is what the form looks like in Content Studio.
+To edit an item, simply select it and click `Edit` in the menu bar, or by using right click. When editing a Person content item, this is what the form looks like in Content Studio. For bigger screens, you will also get a preview on the right hand side.
 
 image::person.png["Person Form", width="1024px"]
 
-The form definition comes from the content type definition, which is located within the app. It looks like this.
+The form definition comes from the content type definition, which is located within the app. Here is what it looks like.
 
 ./src/main/resources/site/content-type/person/person.xml
 [source,XML]
@@ -130,17 +136,17 @@ include::{sourcedir}/src/main/resources/site/content-types/person/person.xml[]
 
 === X-Data: Social media
 
-Below the `Person` form, you can also see an additional form called `Social Media`.
+When editing a Person, the form contains an additional set of fields called `Social Media`. This is strictly speaking a separate form, injected into the Person content type - we call it an x-data. 
 
-image::some-xdata.gif["Social Media X-data fields", width="1024px"]
+image::some-xdata.gif["Social Media x-data form", width="1024px"]
 
-This form is a so-called x-data. The cool thing about X-data is that it can be applied across multiple content types. In this app for instance, the Social Media form is also available on the `Movie` content. X-data can even be injected dynamically, from a different application.
+The cool thing about x-data is not the name, but the fact that it can be applied across multiple content types. In this app for instance, the Social Media form is also available on the `Movie` content. X-data can even be injected from a different application - at runtime.
 
 This is what the definition looks like:
 ./src/main/resources/site/x-data/some/some.xml
 [source,XML]
 ----
-include::{sourcedir}./src/main/resources/site/x-data/some/some.xml[]
+include::{sourcedir}/src/main/resources/site/x-data/some/some.xml[]
 ----
 
 == Adding a new content type
@@ -155,11 +161,9 @@ image::review.png["Sample Review", width="1024px"]
 
 == Graphql API
 
-The https://market.enonic.com/vendors/enonic/guillotine^[headless API aka Guillotine] - yes, we take headlessness seriously around here - is not part of the core platform. Like Content Studio, it can be installed from Enonic Market.
+The https://market.enonic.com/vendors/enonic/guillotine[headless API aka Guillotine^] - yes, we take headlessness seriously around here - is not part of the core platform. Like Content Studio, it can be installed from Enonic Market.
 
 **Install the Guillotine app** from `XP menu -> Applications -> Install` and find it in the list of apps that appear.
-
-image::install-guillotine.png["Install the Guillotine app", width="845px"]
 
 After installing Guillotine, Content Studio's left hand menu will reveal a new menu item called `Query playground`. Here, you may test and play with the GraphQL API directly.
 
@@ -176,7 +180,7 @@ NOTE: *Want to know more about GraphQL in general?* Visit the https://graphql.or
 
 == Sample queries
 
-Below are some example queries you can used on the Movie DB content.
+Below are some example queries you can use for the Movie DB content.
 
 === Get Persons
 
@@ -220,9 +224,9 @@ Below are some example queries you can used on the Movie DB content.
 
 === Query variables
 
-GraphQL also supports the concept of query variables. Similar to parameters in functions, you may passing variables to a query.
+GraphQL also supports the concept of query variables. Similar to parameters in functions, you may pass variables to a query.
 
-The variables are defined with JSON. You can set the query variables in the bottom left corner of the Query playground.
+Query variables are defined with JSON. You can add them in the bottom left corner of the Query playground.
 
 [source,JSON]
 ----
@@ -376,11 +380,11 @@ To deploy your application to production, you'll need Enonic XP running on a ser
 
 [TIP]
 ====
-If you are looking for other hosting options, Enonic XP is open source, and https://developer.enonic.com/docs/hosting[can be deployed pretty much anywhere].
+If you are looking for other hosting options, Enonic XP is open source, and https://developer.enonic.com/docs/hosting[can be deployed pretty much anywhere^].
 ====
 
-. Start by **https://enonic.com/sign-up^[signing up]** for a free account. You must complete the verification steps before you can move on.
-. Log in to the https://cloud.enonic.com^[Enonic console] , and **Create a new  solution** from the menu `Solutions -> CMS essentials template`. Complete the solution wizard steps using your preferences.
+. Start by **https://enonic.com/sign-up[signing up^]** for a free account. You must complete the verification steps before you can move on.
+. Log in to the https://cloud.enonic.com[Enonic console^] , and **Create a new  solution** from the menu `Solutions -> CMS essentials template`. Complete the solution wizard steps using your preferences.
 +
 Similar to a sandbox, this will spin up an instance of Enonic XP, but this time as real server in the cloud.
 +
@@ -414,9 +418,9 @@ Give it a suitable name i.e. `Movie DB API`, and use the following values:
 
 In the process, you built and customized your own app, installed apps from Enonic Market, ran queries, got to know the Enonic CLI and our hosted offerings.
 
-As you may imagine, the platform is capable of so much more. Did you for instance know Enonic has a https://developer.enonic.com/docs/xp/stable/framework^[JavaScript framework], will full https://www.npmjs.com/org/enonic-types^[typescript coverage]. Use it in your apps to extend and customize the platform as you like.
+As you may imagine, the platform is capable of so much more. Did you for instance know Enonic has a https://developer.enonic.com/docs/xp/stable/framework[JavaScript framework^], will full https://www.npmjs.com/org/enonic-types^[TypeScript definitions^]. You may use it in your apps to extend and customize the platform as you like.
 
-To continue the journey, we recommend visiting the https://developer.enonic.com/docs/tutorials^[Enonic tutorials] section of the developer portal.
+To continue the journey, we recommend visiting the https://developer.enonic.com/docs/tutorials[Enonic tutorials^] section of the developer portal.
 
 Bon voyage!
 
