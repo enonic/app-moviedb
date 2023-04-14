@@ -146,6 +146,7 @@ image::some.gif["Social Media x-data form", width="1024px"]
 The cool thing about x-data is not the name, but the fact that it can be applied across multiple content types. In this app for instance, the Social Media form is also available on the `Movie` content. X-data can even be injected from a different application - at runtime.
 
 This is what the definition looks like:
+
 ./src/main/resources/site/x-data/some/some.xml
 [source,XML]
 ----
