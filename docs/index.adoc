@@ -109,7 +109,7 @@ https://market.enonic.com/vendors/enonic/content-studio[Content Studio^] is the 
 image::xp-menu-applications.png["Go to Applications from the XP menu", width="319px"]
 +
 . **Install Content Studio** by clicking `Install`. Find `Content Studio` in the list of apps that appears, select it and clicking install once more. 
-
++
 image::install-content-studio.png["Install the Content Studio app", width="760px"]
 
 == Browse content
