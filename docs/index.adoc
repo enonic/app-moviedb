@@ -35,7 +35,10 @@ Start the sandbox with this command:
 
 Select the `intro` sandbox from the list, and it will boot up in development mode.
 
-TIP: Dev mode automatically loads changes in your code when developing.
+TIP: Dev mode will automatically load changes in your code when developing.
+
+image::sandbox-start.gif["Booting the sandbox in the terminal", width="1024px"]
+
 
 == Create an app
 
