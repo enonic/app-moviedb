@@ -1,10 +1,10 @@
-= Enonic intro
+= Introduction to Enonic
 :toc: right
 :experimental:
 :imagesdir: media/
 :sourcedir: ../
 
-Hands on introduction to our platform, the CLI, Content Studio, the headless API and our free hosting tier.
+Hands on intro to our platform, the CLI, Content Studio, the headless API and our free hosting tier.
 
 TIP: *Just looking for a demo?* - https://enonic.com/sign-up[Sign up for a free Enonic account^]. Create a new solution based on the `Movie DB` template to get a live demo using the same setup as this tutorial.  
 
