@@ -141,7 +141,7 @@ include::{sourcedir}/src/main/resources/site/content-types/person/person.xml[]
 
 When editing a Person, the form contains an additional set of fields called `Social Media`. This is strictly speaking a separate form, injected into the Person content type - we call it an x-data. 
 
-image::some-xdata.gif["Social Media x-data form", width="1024px"]
+image::some.gif["Social Media x-data form", width="1024px"]
 
 The cool thing about x-data is not the name, but the fact that it can be applied across multiple content types. In this app for instance, the Social Media form is also available on the `Movie` content. X-data can even be injected from a different application - at runtime.
 
