@@ -12,7 +12,7 @@ TIP: *Just looking for a demo?* - https://enonic.com/sign-up[Sign up for a free 
 
 This guide will show you how to:
 
-* setup a local Enonic developer environment
+* set up a local Enonic developer environment
 * create an Enonic app
 * install and use Content Studio
 * customize the app by adding a new content type
@@ -108,7 +108,7 @@ https://market.enonic.com/vendors/enonic/content-studio[Content Studio^] is the 
 +
 image::xp-menu-applications.png["Go to Applications from the XP menu", width="319px"]
 +
-. **Install Content Studio** by clicking `Install`. Find `Content Studio` in the list of apps that appears, select it and clicking install once more. 
+. **Install Content Studio**: click `Install` button in the menu bar, scroll down to `Content Studio` (or use search) in the list of apps that appears and click "Install" next to it. 
 +
 image::install-content-studio.png["Install the Content Studio app", width="760px"]
 
@@ -422,7 +422,7 @@ Give it a suitable name i.e. `Movie DB API`, and use the following values:
 
 In the process, you built and customized your own app, installed apps from Enonic Market, ran queries, got to know the Enonic CLI and our hosted offerings.
 
-As you may imagine, the platform is capable of so much more. Did you for instance know Enonic has a https://developer.enonic.com/docs/xp/stable/framework[JavaScript framework^], will full https://www.npmjs.com/org/enonic-types^[TypeScript definitions^]. You may use it in your apps to extend and customize the platform as you like.
+As you may imagine, the platform is capable of so much more. Did you for instance know that Enonic has a https://developer.enonic.com/docs/xp/stable/framework[JavaScript framework^], with full https://www.npmjs.com/org/enonic-types[TypeScript definitions^]? You may use it in your apps to extend and customize the platform as you like.
 
 To continue the journey, we recommend visiting the https://developer.enonic.com/docs/tutorials[Enonic tutorials^] section of the developer portal.
 
