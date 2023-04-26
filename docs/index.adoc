@@ -312,9 +312,11 @@ NOTE: If you changed the name of your app when creating it, you must replace `co
 }
 ----
 
-=== Person with photo
+== Image handling
 
-This query will show the name of actors containing the term `morgan`, and provide a link to a cropped image of the actor.
+In this case, Guillotine plays tag-team with Enonic's image service, which is capable of delivering real-time cropped and optimized versions of images. In this case producing a 400 x 400px version of the image.
+
+The query below show the name of actors containing the term `morgan`, and provide a link to a cropped image of the actor.
 
 .Name of persons and a link to 400x400 scaled photo
 [source,GraphQL]
@@ -361,13 +363,11 @@ This query will show the name of actors containing the term `morgan`, and provid
 }
 ----
 
-When looking at the result in Query Playground, you should see something like this (mouse over the link to reveal the image):
+When looking at the result in Query Playground, you can see the actual image by hovering over the link:
 
 image::morgan-photo.png["Cropped version of Morgan Freemans image", width="1024px"]
 
-In this case, Guillotine plays tag-team with Enonic's image service, which is capable of delivering real-time cropped and optimized versions of images. In this case producing a 400 x 400px version of the image.
-
-This is what the original higher resolution image content actually looks like - also notice how images are stored and handled just like any other piece of content:
+The original higher resolution image is stored as a content item, just like persons and reviews. This is what it actually looks like:
 
 image::morgan-original.png["The original version of Morgan Freemans photo is widescreen, with a red "autofocus" circle marked around his face", width="1024px"]
 
