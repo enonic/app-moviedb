@@ -108,7 +108,7 @@ https://market.enonic.com/vendors/enonic/content-studio[Content Studio^] is the 
 +
 image::xp-menu-applications.png["Go to Applications from the XP menu", width="319px"]
 +
-. **Install Content Studio**: click `Install` button in the menu bar, scroll down to `Content Studio` (or use search) in the list of apps that appears and click "Install" next to it. 
+. **Install Content Studio**: click `Install` button in the menu bar, scroll down to `Content Studio` (or use search) in the list of apps that appears and click `Install` next to it. 
 +
 image::install-content-studio.png["Install the Content Studio app", width="760px"]
 
@@ -169,17 +169,15 @@ The https://market.enonic.com/vendors/enonic/guillotine[headless API aka Guillot
 
 **Install the Guillotine app** from `XP menu -> Applications -> Install` and find it in the list of apps that appear.
 
-After installing Guillotine, Content Studio's left hand menu will reveal a new menu item called `Query playground`. Here, you may test and play with the GraphQL API directly.
+TIP: The Guillotine API provides read-only-access to all of the content within the contextual project. Users requesting content will naturally only get access to the content he/she has read-permissions for. The Movie DB project is setup with public read access.
 
-image::query-playground.gif["Query Playground in action", width="1024px"]
+After installing Guillotine, Content Studio's left hand menu will reveal a new menu item called `Query Playground`. Here, you may test and play with the GraphQL API directly.
 
-The Guillotine API provides read-only-access to all of the content within the contextual project. 
+image::query-playground.png["Query Playground in action", width="1024px"]
 
-NOTE: The user requesting content will naturally only get access to the content he/she has read-permissions for. The Movie DB project is setup with public read access.
+The API documentation is available from the top left "file cabinet" icon. Use the dropdown on the top right to query against the draft or master branch, accessing the draft and published items respectively.
 
-The API documentation is available from the top right corner. Use the dropdown on the top left to query against the draft or master branch, accessing the draft and published items respectively.
-
-NOTE: *Want to know more about GraphQL in general?* Visit the https://graphql.org[official GraphQL documentation].
+Want to know more about GraphQL in general? Visit the https://graphql.org[official GraphQL documentation^].
 
 
 == Sample queries
@@ -196,8 +194,8 @@ Below are some example queries you can use for the Movie DB content.
   getChildren(key:"/persons" first:3){
     displayName
     _path
-  	}
-	}
+    }
+  }
 }
 ----
 
@@ -230,12 +228,12 @@ Below are some example queries you can use for the Movie DB content.
 
 GraphQL also supports the concept of query variables. Similar to parameters in functions, you may pass variables to a query.
 
-Query variables are defined with JSON. You can add them in the bottom left corner of the Query playground.
+Query variables are defined with JSON. You can add them from the `Variables` option below the query editor.
 
 [source,JSON]
 ----
 {
-    "path": "/persons"
+  "path": "/persons"
 }
 ----
 
@@ -249,8 +247,8 @@ query($path:ID!){
   getChildren(key:$path first:5){
     displayName
     _path
-  	}
-	}
+    }
+  }
 }
 ----
 
@@ -363,20 +361,28 @@ This query will show the name of actors containing the term `morgan`, and provid
 }
 ----
 
-When browsing the content structure, and you'll find that both `Morgan Freeman` and his image are stored as individual content items. In Enonic XP, every content items is fundamentally the same, each with a specific content type.
+When looking at the result in Query Playground, you should see something like this (mouse over the link to reveal the image):
 
-TIP: The image service, which is part of Enonic XP, supports real-time image cropping and optimization. In this case it serves a square 400x400px version of the image. Hover the link in GraphQL playground to see it.
+image::morgan-photo.png["Cropped version of Morgan Freemans image", width="1024px"]
+
+In this case, Guillotine plays tag-team with Enonic's image service, which is capable of delivering real-time cropped and optimized versions of images. In this case producing a 400 x 400px version of the image.
+
+This is what the original higher resolution image content actually looks like - also notice how images are stored and handled just like any other piece of content:
+
+image::morgan-original.png["The original version of Morgan Freemans photo is widescreen, with a red "autofocus" circle marked around his face", width="1024px"]
+
+NOTE: The red "autofocus" circle, when set, helps the image service to crop the images optimally - as you can see from above.
+
 
 == API endpoint
 So far, you've been playing with the API via Content Studio, if you want to access the API's endpoint directly, its available at respectively 
 
-* http://localhost:8080/site/moviedb/draft (draft items)
-* http://localhost:8080/site/moviedb/master (published items).
+* \http://localhost:8080/site/moviedb/draft (draft items)
+* \http://localhost:8080/site/moviedb/master (published items).
 
-The API can be deployed to a custom domain (aka vhost) when you go live.
+The API can be deployed to a custom domain (aka vhost) when you go live. Also, important to notice - the GraphQL API is accessed via HTTP POST method, as such - visiting via a regular browser will render a 404.
 
-NOTE: The GraphQL API is accessed via HTTP POST method, as such - visiting via a regular browser will render a 404.
-
+TIP: The Chrome extension https://chrome.google.com/webstore/detail/altair-graphql-client/flnheeellpciglgpaodhkhmapeljopja[Altair^] lets you browse any GraphQL API, simply by pointing it to the URL.
 
 == Deploying to Production
 
@@ -422,9 +428,9 @@ Give it a suitable name i.e. `Movie DB API`, and use the following values:
 
 In the process, you built and customized your own app, installed apps from Enonic Market, ran queries, got to know the Enonic CLI and our hosted offerings.
 
-As you may imagine, the platform is capable of so much more. Did you for instance know that Enonic has a https://developer.enonic.com/docs/xp/stable/framework[JavaScript framework^], with full https://www.npmjs.com/org/enonic-types[TypeScript definitions^]? You may use it in your apps to extend and customize the platform as you like.
+As you may imagine, the platform is capable of so much more. Did you for instance know Enonic has a https://developer.enonic.com/docs/xp/stable/framework[JavaScript framework], will full https://www.npmjs.com/org/enonic-types^[TypeScript definitions^]. You may use it in your apps to extend and customize the platform as you like.
 
-To continue the journey, we recommend visiting the https://developer.enonic.com/docs/tutorials[Enonic tutorials^] section of the developer portal.
+To continue the journey, we recommend visiting the https://developer.enonic.com/docs/tutorials[Enonic tutorials] section of the developer portal.
 
 Bon voyage!
 
