@@ -19,7 +19,7 @@ This guide will show you how to:
 * access and use the GraphQL API
 * optionally - deploy your app to a live server
 
-== Install Enonic CLI
+== Install CLI
 
 The Enonic Command Line Interface is an essential tool for developers working with Enonic.
 
@@ -28,6 +28,12 @@ If you have `npm` on your device, run this command:
   npm install -g @enonic/cli
 
 If not, here are some https://developer.enonic.com/start[alternative ways to install Enonic CLI^]
+
+To verify that the CLI has been installed, run `enonic -v`. This should output the version of your installed CLI. 
+
+To see all available options, simply run `enonic`.
+
+TIP: To upgrade, use `enonic latest`. If there are new versions you will see instructions on how to upgrade.
 
 
 == Create a Sandbox
