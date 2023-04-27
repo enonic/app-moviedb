@@ -4,7 +4,7 @@
 :imagesdir: media/
 :sourcedir: ../
 
-Hands on intro to our platform, the CLI, Content Studio, the headless API and our free hosting tier.
+Hands on intro to our platform, CLI, Content Studio, headless API, and free hosting tier.
 
 TIP: *Just looking for a demo?* - https://enonic.com/sign-up[Sign up for a free Enonic account^]. Create a new solution based on the `Movie DB` template to get a live demo using the same setup as this tutorial.  
 
@@ -19,9 +19,18 @@ This guide will show you how to:
 * access and use the GraphQL API
 * optionally - deploy your app to a live server
 
-== Create a Sandbox
+== Install Enonic CLI
 
-NOTE: Make sure you have installed https://developer.enonic.com/start[Enonic CLI^] before you continue.
+The Enonic Command Line Interface is an essential tool for developers working with Enonic.
+
+If you have `npm` on your device, run this command: 
+
+  npm install -g @enonic/cli
+
+If not, here are some https://developer.enonic.com/start[alternative ways to install Enonic CLI^]
+
+
+== Create a Sandbox
 
 A sandbox is a local developer instance of our platform - Enonic XP. Create a sandbox by running this command in your terminal:
 
@@ -81,9 +90,9 @@ gradle.properties <6>
 <5> Code samples that will be used in this guide
 <6> App settings and name
 
-== Deploy your app
+== Deploy the app
 
-Assuming you did not change the default directory name `myproject/` when creating the app, build and deploy your app with the following commands : 
+Assuming you did not change the default directory name `myproject/` when creating the app, build and deploy your app with the following commands: 
 
   cd myproject
   enonic project deploy
@@ -114,7 +123,7 @@ image::install-content-studio.png["Install the Content Studio app", width="760px
 
 == Browse content
 
-When your application was installed, it automatically created a CMS project called `Movie DB`, and imported some demo content. Let's have a look:
+When your application was installed, it automatically created a Content Studio project called `Movie DB`, and imported sample content. Let's have a look:
 
 . Open Content Studio, which is now available in `XP menu -> Content Studio`.
 
