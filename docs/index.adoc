@@ -65,6 +65,9 @@ IMPORTANT: Use the default options when prompted.
 
   enonic project create -r app-moviedb
 
+
+Select the `intro` sandbox from the list, and the app will use this from now on.
+
 [TIP]
 ====
 The command uses the https://market.enonic.com/vendors/enonic/movie-db[Movie DB^] app as a starter (template) for your app.
@@ -98,12 +101,12 @@ gradle.properties <6>
 
 == Deploy the app
 
-Assuming you did not change the default directory name `myproject/` when creating the app, build and deploy your app with the following commands: 
+Assuming you did not change the default directory name `myproject/` when creating the app, run the following commands: 
 
   cd myproject
-  enonic project deploy
+  enonic dev
 
-Select the `intro` sandbox from the list, and the app will use this from now on.
+This last command will make sure to build and deploy the app to your `intro` sandbox, and sequentially keep watching for changes on server side code to automatically redeploy your app as you work on it.
 
 [NOTE]
 ====
