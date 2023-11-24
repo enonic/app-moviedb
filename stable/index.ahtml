@@ -629,6 +629,9 @@ Use the default options when prompted.
 <pre>enonic project create -r app-moviedb</pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Select the <code>intro</code> sandbox from the list, and the app will use this from now on.</p>
+</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -698,16 +701,16 @@ gradle.properties <i class="conum" data-value="6"></i><b>(6)</b></code></pre>
 <h2 id="deploy_the_app"><a class="link" href="#deploy_the_app">Deploy the app</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Assuming you did not change the default directory name <code>myproject/</code> when creating the app, build and deploy your app with the following commands:</p>
+<p>Assuming you did not change the default directory name <code>myproject/</code> when creating the app, run the following commands:</p>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>cd myproject
-enonic project deploy</pre>
+enonic dev</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Select the <code>intro</code> sandbox from the list, and the app will use this from now on.</p>
+<p>This last command will make sure to build and deploy the app to your <code>intro</code> sandbox, and sequentially keep watching for changes on server side code to automatically redeploy your app as you work on it.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1318,7 +1321,7 @@ You must execute the command from your app folder.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-08-07 09:51:01 UTC
+Last updated 2023-11-24 12:54:52 UTC
 </div>
 </div>
 </body>
